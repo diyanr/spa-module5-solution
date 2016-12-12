@@ -1,0 +1,60 @@
+<div class="container">
+  <h2 id="sign-up-title" class="text-center">Sign Up</h2>
+  <div class="text-center">
+    Sign up for our tasty newsletter!
+  </div>
+
+  <fieldset>
+  	<form name="signUpForm" novalidate>
+  		<table width="1100px">
+  			<tr>
+  				<td align="right" width="50%">First Name: </td>
+  				<td align="left" width="50%">
+  					<input type="text" name="fname" required placeholder="John" ng-model="signUpCtrl.user.fname">
+				  	<span ng-if="signUpForm.fname.$invalid && signUpForm.fname.$touched">First name is required</span>
+	  			</td>
+  			</tr>
+  			<tr>
+  				<td align="right" width="50%">Last Name: </td>
+  				<td align="left" width="50%">
+  					<input type="text" name="lname" required placeholder="Doe" ng-model="signUpCtrl.user.lname">
+				  	<span ng-if="signUpForm.lname.$invalid && signUpForm.lname.$touched">Last name is required</span>
+	  			</td>
+  			</tr>
+  			<tr>
+  				<td align="right" width="50%">E-mail: </td>
+  				<td align="left" width="50%">
+  					<input type="email" name="email" required placeholder="handle@domain" ng-model="signUpCtrl.user.email">
+				  	<span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">Must be a valid email address: handle@domain format</span>
+	  			</td>
+  			</tr>
+  			<tr>
+  				<td align="right" width="50%">Phone: </td>
+  				<td align="left" width="50%">
+  					<input type="text" name="phone" required pattern="(\d{3})-(\d{3})-(\d{4})" placeholder="###-###-####" ng-model="signUpCtrl.user.phone">
+				  	<span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">Phone must be in the format ###-###-####</span>
+	  			</td>
+  			</tr>
+  			<tr>
+  				<td align="right" width="50%">Favorite dish: </td>
+  				<td align="left" width="50%">
+  					<input type="text" name="short_name" required placeholder="Menu number" ng-model="signUpCtrl.user.short_name">
+				  	<span ng-if="signUpForm.short_name.$invalid && signUpForm.short_name.$touched">Please enter a favorite menu number</span>
+				  	<span ng-if="signUpCtrl.completed && !signUpCtrl.validMenu">No such menu number exists</span>
+	  			</td>
+  			</tr>
+  			<tr>
+  				<td align="center" colspan="2" width="100%">
+  					<button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit();">Submit</button>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td align="center" colspan="2" width="100%">
+  					<span ng-if="signUpCtrl.completed && signUpCtrl.saved">Your information has been saved</span>
+  				</td>
+  			</tr>
+  		</table>
+	  </form>
+  </fieldset>
+
+</div>

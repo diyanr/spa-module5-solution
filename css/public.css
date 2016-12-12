@@ -37,6 +37,33 @@
 }
 /* END HOME PAGE */
 
+/* SIGN UP PAGE */
+#sign-up-title + div {
+  margin-bottom: 50px;
+}
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+input {
+  font-size: 0.8em;
+  color: #000;
+}
+input span {
+  color: #fff;
+}
+form button {
+  border: 2px solid #CCCCCC;
+  background-color: #CCCCCC;
+  color: #000;
+  opacity: 0.8;
+  width: 200px;
+  margin: 0 auto 15px;
+}
+/* END SIGN UP PAGE */
+
 /* MENU CATEGORIES PAGE */
 .category-tile {
   position: relative;
